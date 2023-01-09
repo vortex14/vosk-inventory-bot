@@ -1,0 +1,7 @@
+vosk
+PyTelegramBotAPI
+natasha==0.10.0
+yargy==0.12.0
+uvicorn
+fastapi
+yargy

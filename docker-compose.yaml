@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  decoder:
+    build: .
+    volumes:
+      - ./main.py:/app/main.py
+    entrypoint: uvicorn
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bestbuy_categories.rule=Host(`${HOST}`)"
+      - "traefik.http.routers.bestbuy_categories.entrypoints=web"
+    
+    networks:
+      - web
+      - local
+    ports:
+      - 80
+    command: main:app --host 0.0.0.0 --port 80
+
+networks:
+  local:
+    external:
+      name: discovery
+  web:
+    external: true
