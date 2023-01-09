@@ -8,8 +8,8 @@ services:
     entrypoint: uvicorn
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.bestbuy_categories.rule=Host(`${HOST}`)"
-      - "traefik.http.routers.bestbuy_categories.entrypoints=web"
+      - "traefik.http.routers.vosk.rule=Host(`${HOST}`)"
+      - "traefik.http.routers.vosk.entrypoints=web"
     
     networks:
       - web
