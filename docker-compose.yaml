@@ -4,6 +4,8 @@ services:
   decoder:
     build: .
     volumes:
+    env_file:
+      - .env
       - ./main.py:/app/main.py
     entrypoint: uvicorn
     labels:
