@@ -9,4 +9,5 @@ RUN apt install --yes python3 && apt install -y python3-pip
 
 ADD . /app
 WORKDIR /app
+RUN mkdir -p audios && mkdir -p decoded
 RUN pip install -r requirements.txt
